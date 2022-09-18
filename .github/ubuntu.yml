@@ -1,0 +1,18 @@
+name: ubunturdp
+on: 
+  workflow_dispatch:
+   inputs:
+     auth:
+        description: 'GRDP Authorization Code'
+        required: true
+        default: 'paste your code here'
+  
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Creating User to Login
+      run: 
